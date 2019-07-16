@@ -13,6 +13,9 @@ const LazyOwnerList = React.lazy(() => import("./Owner/OwnerList/OwnerList"));
 const LazyOwnerDetails = React.lazy(() =>
   import("./Owner/OwnerDetails/OwnerDetails")
 );
+const LazyCreateOwner = React.lazy(() =>
+  import("./Owner/CreateOwner/CreateOwner")
+);
 
 class App extends Component {
   render() {
@@ -24,6 +27,7 @@ class App extends Component {
               <Route path="/" exact component={Home} />
               <Route path="/owner-list" component={LazyOwnerList} />
               <Route path="/ownerDetails/:id" component={LazyOwnerDetails} />
+              <Route path="/createOwner" component={LazyCreateOwner} />
               <Route path="/500" component={InternalServer} />
               <Route path="*" component={NotFound} />
             </Switch>
