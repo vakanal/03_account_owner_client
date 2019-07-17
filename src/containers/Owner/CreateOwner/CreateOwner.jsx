@@ -36,8 +36,8 @@ class CreateOwner extends Component {
 
     const ownerToCreate = {
       name: this.state.ownerForm.name.value,
-      address: this.state.ownerForm.address.value,
-      dateOfBirth: this.state.ownerForm.dateOfBirth.value
+      address: this.state.ownerForm.address.value
+      // dateOfBirth: this.state.ownerForm.dateOfBirth.value
     };
 
     const url = "/api/owner";
