@@ -13,6 +13,19 @@ class CreateOwner extends Component {
     };
   }
 
+  handleChangeEvent = (event, id) => {
+    const updatedOwnerForm = { ...this.state.ownerForm };
+    updatedOwnerForm[id] = formUtilityActions.executeValidationAndReturnFormElement(
+      event,
+      updatedOwnerForm,
+      id
+    );
+
+    const counter = formUtilityActions.countInvalidElements(updatedOwnerForm);
+
+    this.setState({ ownerForm: updatedOwnerForm, isFormValid: counter === 0 });
+  };
+
   render() {
     const formElementsArray = formUtilityActions.convertStateToArrayOfFormObjects(
       { ...this.state.ownerForm }
